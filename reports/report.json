@@ -1,0 +1,669 @@
+[
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/login.feature:3",
+      "name": "Registro exitoso",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/login.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:18"
+          },
+          "name": "I navigate to the register page",
+          "result": {
+            "duration": 9.974318265914917,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/login.feature:5",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:25"
+          },
+          "name": "I enter valid data for each field",
+          "result": {
+            "duration": 1.9468765258789062,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/login.feature:6",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:38"
+          },
+          "name": "I should see a confirmation message",
+          "result": {
+            "duration": 0.08813714981079102,
+            "error_message": [
+              "Traceback (most recent call last):",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\behave\\model.py\", line 1329, in run",
+              "    match.run(runner.context)",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\behave\\matchers.py\", line 98, in run",
+              "    self.func(context, *args, **kwargs)",
+              "  File \"features\\steps\\steps.py\", line 40, in step_impl",
+              "    assert context.driver.find_element(By.CSS_SELECTOR, \".message\").text == \"Datos ingresado.\"",
+              "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py\", line 748, in find_element",
+              "    return self.execute(Command.FIND_ELEMENT, {\"using\": by, \"value\": value})[\"value\"]",
+              "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py\", line 354, in execute",
+              "    self.error_handler.check_response(response)",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py\", line 229, in check_response",
+              "    raise exception_class(message, screen, stacktrace)",
+              "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".message\"}",
+              "  (Session info: chrome=126.0.6478.185); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception",
+              "Stacktrace:",
+              "\tGetHandleVerifier [0x00B7C203+27395]",
+              "\t(No symbol) [0x00B13E04]",
+              "\t(No symbol) [0x00A11B7F]",
+              "\t(No symbol) [0x00A52C65]",
+              "\t(No symbol) [0x00A52D3B]",
+              "\t(No symbol) [0x00A8EC82]",
+              "\t(No symbol) [0x00A739E4]",
+              "\t(No symbol) [0x00A8CB24]",
+              "\t(No symbol) [0x00A73736]",
+              "\t(No symbol) [0x00A47541]",
+              "\t(No symbol) [0x00A480BD]",
+              "\tGetHandleVerifier [0x00E33AB3+2876339]",
+              "\tGetHandleVerifier [0x00E87F7D+3221629]",
+              "\tGetHandleVerifier [0x00BFD674+556916]",
+              "\tGetHandleVerifier [0x00C0478C+585868]",
+              "\t(No symbol) [0x00B1CE44]",
+              "\t(No symbol) [0x00B19858]",
+              "\t(No symbol) [0x00B199F7]",
+              "\t(No symbol) [0x00B0BF4E]",
+              "\tBaseThreadInitThunk [0x764B7BA9+25]",
+              "\tRtlInitializeExceptionChain [0x7702C10B+107]",
+              "\tRtlClearBits [0x7702C08F+191]",
+              "",
+              "",
+              "Captured logging:",
+              "INFO:WDM:====== WebDriver manager ======",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Driver [C:\\Users\\user\\.wdm\\drivers\\chromedriver\\win64\\126.0.6478.182\\chromedriver-win32/chromedriver.exe] found in cache"
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "features/login.feature:8",
+      "name": "Campos en blanco",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/login.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:18"
+          },
+          "name": "I navigate to the register page",
+          "result": {
+            "duration": 5.2103776931762695,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/login.feature:10",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:44"
+          },
+          "name": "I leave all fields empty",
+          "result": {
+            "duration": 0.4147815704345703,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/login.feature:11",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:49"
+          },
+          "name": "I should see a message",
+          "result": {
+            "duration": 0.48178553581237793,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "features/login.feature:13",
+      "name": "Nombre con n\u00fameros",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/login.feature:14",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:18"
+          },
+          "name": "I navigate to the register page",
+          "result": {
+            "duration": 5.1935625076293945,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/login.feature:15",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:55"
+          },
+          "name": "I enter a name with numbers",
+          "result": {
+            "duration": 1.2751002311706543,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/login.feature:16",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:68"
+          },
+          "name": "I should see a alert message",
+          "result": {
+            "duration": 0.0797879695892334,
+            "error_message": [
+              "Traceback (most recent call last):",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\behave\\model.py\", line 1329, in run",
+              "    match.run(runner.context)",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\behave\\matchers.py\", line 98, in run",
+              "    self.func(context, *args, **kwargs)",
+              "  File \"features\\steps\\steps.py\", line 70, in step_impl",
+              "    assert context.driver.find_element(By.CSS_SELECTOR, \".message\").text == \"Complete la informaci\u00f3n correctamente.\"",
+              "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py\", line 748, in find_element",
+              "    return self.execute(Command.FIND_ELEMENT, {\"using\": by, \"value\": value})[\"value\"]",
+              "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py\", line 354, in execute",
+              "    self.error_handler.check_response(response)",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py\", line 229, in check_response",
+              "    raise exception_class(message, screen, stacktrace)",
+              "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".message\"}",
+              "  (Session info: chrome=126.0.6478.185); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception",
+              "Stacktrace:",
+              "\tGetHandleVerifier [0x00B7C203+27395]",
+              "\t(No symbol) [0x00B13E04]",
+              "\t(No symbol) [0x00A11B7F]",
+              "\t(No symbol) [0x00A52C65]",
+              "\t(No symbol) [0x00A52D3B]",
+              "\t(No symbol) [0x00A8EC82]",
+              "\t(No symbol) [0x00A739E4]",
+              "\t(No symbol) [0x00A8CB24]",
+              "\t(No symbol) [0x00A73736]",
+              "\t(No symbol) [0x00A47541]",
+              "\t(No symbol) [0x00A480BD]",
+              "\tGetHandleVerifier [0x00E33AB3+2876339]",
+              "\tGetHandleVerifier [0x00E87F7D+3221629]",
+              "\tGetHandleVerifier [0x00BFD674+556916]",
+              "\tGetHandleVerifier [0x00C0478C+585868]",
+              "\t(No symbol) [0x00B1CE44]",
+              "\t(No symbol) [0x00B19858]",
+              "\t(No symbol) [0x00B199F7]",
+              "\t(No symbol) [0x00B0BF4E]",
+              "\tBaseThreadInitThunk [0x764B7BA9+25]",
+              "\tRtlInitializeExceptionChain [0x7702C10B+107]",
+              "\tRtlClearBits [0x7702C08F+191]",
+              "",
+              "",
+              "Captured logging:",
+              "INFO:WDM:====== WebDriver manager ======",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Driver [C:\\Users\\user\\.wdm\\drivers\\chromedriver\\win64\\126.0.6478.182\\chromedriver-win32/chromedriver.exe] found in cache"
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "features/login.feature:18",
+      "name": "Apellido con n\u00fameros",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/login.feature:19",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:18"
+          },
+          "name": "I navigate to the register page",
+          "result": {
+            "duration": 5.383364915847778,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/login.feature:20",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:74"
+          },
+          "name": "I enter a lastname with numbers",
+          "result": {
+            "duration": 1.2105605602264404,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/login.feature:21",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:68"
+          },
+          "name": "I should see a alert message",
+          "result": {
+            "duration": 0.03272819519042969,
+            "error_message": [
+              "Traceback (most recent call last):",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\behave\\model.py\", line 1329, in run",
+              "    match.run(runner.context)",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\behave\\matchers.py\", line 98, in run",
+              "    self.func(context, *args, **kwargs)",
+              "  File \"features\\steps\\steps.py\", line 70, in step_impl",
+              "    assert context.driver.find_element(By.CSS_SELECTOR, \".message\").text == \"Complete la informaci\u00f3n correctamente.\"",
+              "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py\", line 748, in find_element",
+              "    return self.execute(Command.FIND_ELEMENT, {\"using\": by, \"value\": value})[\"value\"]",
+              "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py\", line 354, in execute",
+              "    self.error_handler.check_response(response)",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py\", line 229, in check_response",
+              "    raise exception_class(message, screen, stacktrace)",
+              "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".message\"}",
+              "  (Session info: chrome=126.0.6478.185); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception",
+              "Stacktrace:",
+              "\tGetHandleVerifier [0x00B7C203+27395]",
+              "\t(No symbol) [0x00B13E04]",
+              "\t(No symbol) [0x00A11B7F]",
+              "\t(No symbol) [0x00A52C65]",
+              "\t(No symbol) [0x00A52D3B]",
+              "\t(No symbol) [0x00A8EC82]",
+              "\t(No symbol) [0x00A739E4]",
+              "\t(No symbol) [0x00A8CB24]",
+              "\t(No symbol) [0x00A73736]",
+              "\t(No symbol) [0x00A47541]",
+              "\t(No symbol) [0x00A480BD]",
+              "\tGetHandleVerifier [0x00E33AB3+2876339]",
+              "\tGetHandleVerifier [0x00E87F7D+3221629]",
+              "\tGetHandleVerifier [0x00BFD674+556916]",
+              "\tGetHandleVerifier [0x00C0478C+585868]",
+              "\t(No symbol) [0x00B1CE44]",
+              "\t(No symbol) [0x00B19858]",
+              "\t(No symbol) [0x00B199F7]",
+              "\t(No symbol) [0x00B0BF4E]",
+              "\tBaseThreadInitThunk [0x764B7BA9+25]",
+              "\tRtlInitializeExceptionChain [0x7702C10B+107]",
+              "\tRtlClearBits [0x7702C08F+191]",
+              "",
+              "",
+              "Captured logging:",
+              "INFO:WDM:====== WebDriver manager ======",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Driver [C:\\Users\\user\\.wdm\\drivers\\chromedriver\\win64\\126.0.6478.182\\chromedriver-win32/chromedriver.exe] found in cache"
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "features/login.feature:23",
+      "name": "Fechas de nacimiento muy antiguas",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/login.feature:24",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:18"
+          },
+          "name": "I navigate to the register page",
+          "result": {
+            "duration": 5.900326251983643,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/login.feature:25",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:87"
+          },
+          "name": "I enter an excessively old birth date",
+          "result": {
+            "duration": 1.6788830757141113,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/login.feature:26",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:68"
+          },
+          "name": "I should see a alert message",
+          "result": {
+            "duration": 0.026897430419921875,
+            "error_message": [
+              "Traceback (most recent call last):",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\behave\\model.py\", line 1329, in run",
+              "    match.run(runner.context)",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\behave\\matchers.py\", line 98, in run",
+              "    self.func(context, *args, **kwargs)",
+              "  File \"features\\steps\\steps.py\", line 70, in step_impl",
+              "    assert context.driver.find_element(By.CSS_SELECTOR, \".message\").text == \"Complete la informaci\u00f3n correctamente.\"",
+              "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py\", line 748, in find_element",
+              "    return self.execute(Command.FIND_ELEMENT, {\"using\": by, \"value\": value})[\"value\"]",
+              "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py\", line 354, in execute",
+              "    self.error_handler.check_response(response)",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py\", line 229, in check_response",
+              "    raise exception_class(message, screen, stacktrace)",
+              "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".message\"}",
+              "  (Session info: chrome=126.0.6478.185); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception",
+              "Stacktrace:",
+              "\tGetHandleVerifier [0x00B7C203+27395]",
+              "\t(No symbol) [0x00B13E04]",
+              "\t(No symbol) [0x00A11B7F]",
+              "\t(No symbol) [0x00A52C65]",
+              "\t(No symbol) [0x00A52D3B]",
+              "\t(No symbol) [0x00A8EC82]",
+              "\t(No symbol) [0x00A739E4]",
+              "\t(No symbol) [0x00A8CB24]",
+              "\t(No symbol) [0x00A73736]",
+              "\t(No symbol) [0x00A47541]",
+              "\t(No symbol) [0x00A480BD]",
+              "\tGetHandleVerifier [0x00E33AB3+2876339]",
+              "\tGetHandleVerifier [0x00E87F7D+3221629]",
+              "\tGetHandleVerifier [0x00BFD674+556916]",
+              "\tGetHandleVerifier [0x00C0478C+585868]",
+              "\t(No symbol) [0x00B1CE44]",
+              "\t(No symbol) [0x00B19858]",
+              "\t(No symbol) [0x00B199F7]",
+              "\t(No symbol) [0x00B0BF4E]",
+              "\tBaseThreadInitThunk [0x764B7BA9+25]",
+              "\tRtlInitializeExceptionChain [0x7702C10B+107]",
+              "\tRtlClearBits [0x7702C08F+191]",
+              "",
+              "",
+              "Captured logging:",
+              "INFO:WDM:====== WebDriver manager ======",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Driver [C:\\Users\\user\\.wdm\\drivers\\chromedriver\\win64\\126.0.6478.182\\chromedriver-win32/chromedriver.exe] found in cache"
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "features/login.feature:28",
+      "name": "Edad menor a 18 a\u00f1os",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/login.feature:29",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:18"
+          },
+          "name": "I navigate to the register page",
+          "result": {
+            "duration": 5.546313762664795,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/login.feature:30",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:100"
+          },
+          "name": "I enter the birth date of a underage person",
+          "result": {
+            "duration": 1.6003282070159912,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/login.feature:31",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:68"
+          },
+          "name": "I should see a alert message",
+          "result": {
+            "duration": 0.024963855743408203,
+            "error_message": [
+              "Traceback (most recent call last):",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\behave\\model.py\", line 1329, in run",
+              "    match.run(runner.context)",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\behave\\matchers.py\", line 98, in run",
+              "    self.func(context, *args, **kwargs)",
+              "  File \"features\\steps\\steps.py\", line 70, in step_impl",
+              "    assert context.driver.find_element(By.CSS_SELECTOR, \".message\").text == \"Complete la informaci\u00f3n correctamente.\"",
+              "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py\", line 748, in find_element",
+              "    return self.execute(Command.FIND_ELEMENT, {\"using\": by, \"value\": value})[\"value\"]",
+              "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py\", line 354, in execute",
+              "    self.error_handler.check_response(response)",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py\", line 229, in check_response",
+              "    raise exception_class(message, screen, stacktrace)",
+              "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".message\"}",
+              "  (Session info: chrome=126.0.6478.185); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception",
+              "Stacktrace:",
+              "\tGetHandleVerifier [0x00B7C203+27395]",
+              "\t(No symbol) [0x00B13E04]",
+              "\t(No symbol) [0x00A11B7F]",
+              "\t(No symbol) [0x00A52C65]",
+              "\t(No symbol) [0x00A52D3B]",
+              "\t(No symbol) [0x00A8EC82]",
+              "\t(No symbol) [0x00A739E4]",
+              "\t(No symbol) [0x00A8CB24]",
+              "\t(No symbol) [0x00A73736]",
+              "\t(No symbol) [0x00A47541]",
+              "\t(No symbol) [0x00A480BD]",
+              "\tGetHandleVerifier [0x00E33AB3+2876339]",
+              "\tGetHandleVerifier [0x00E87F7D+3221629]",
+              "\tGetHandleVerifier [0x00BFD674+556916]",
+              "\tGetHandleVerifier [0x00C0478C+585868]",
+              "\t(No symbol) [0x00B1CE44]",
+              "\t(No symbol) [0x00B19858]",
+              "\t(No symbol) [0x00B199F7]",
+              "\t(No symbol) [0x00B0BF4E]",
+              "\tBaseThreadInitThunk [0x764B7BA9+25]",
+              "\tRtlInitializeExceptionChain [0x7702C10B+107]",
+              "\tRtlClearBits [0x7702C08F+191]",
+              "",
+              "",
+              "Captured logging:",
+              "INFO:WDM:====== WebDriver manager ======",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Driver [C:\\Users\\user\\.wdm\\drivers\\chromedriver\\win64\\126.0.6478.182\\chromedriver-win32/chromedriver.exe] found in cache"
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "features/login.feature:33",
+      "name": "Cedula con valor negativo",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/login.feature:34",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:18"
+          },
+          "name": "I navigate to the register page",
+          "result": {
+            "duration": 5.080445766448975,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/login.feature:35",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:114"
+          },
+          "name": "I enter a negative number in id field",
+          "result": {
+            "duration": 1.5083973407745361,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/login.feature:36",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:68"
+          },
+          "name": "I should see a alert message",
+          "result": {
+            "duration": 0.023292064666748047,
+            "error_message": [
+              "Traceback (most recent call last):",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\behave\\model.py\", line 1329, in run",
+              "    match.run(runner.context)",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\behave\\matchers.py\", line 98, in run",
+              "    self.func(context, *args, **kwargs)",
+              "  File \"features\\steps\\steps.py\", line 70, in step_impl",
+              "    assert context.driver.find_element(By.CSS_SELECTOR, \".message\").text == \"Complete la informaci\u00f3n correctamente.\"",
+              "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py\", line 748, in find_element",
+              "    return self.execute(Command.FIND_ELEMENT, {\"using\": by, \"value\": value})[\"value\"]",
+              "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py\", line 354, in execute",
+              "    self.error_handler.check_response(response)",
+              "  File \"C:\\Users\\user\\Downloads\\QuintoSemestre\\IngenieriaRequisitos\\Tests\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py\", line 229, in check_response",
+              "    raise exception_class(message, screen, stacktrace)",
+              "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".message\"}",
+              "  (Session info: chrome=126.0.6478.185); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception",
+              "Stacktrace:",
+              "\tGetHandleVerifier [0x00B7C203+27395]",
+              "\t(No symbol) [0x00B13E04]",
+              "\t(No symbol) [0x00A11B7F]",
+              "\t(No symbol) [0x00A52C65]",
+              "\t(No symbol) [0x00A52D3B]",
+              "\t(No symbol) [0x00A8EC82]",
+              "\t(No symbol) [0x00A739E4]",
+              "\t(No symbol) [0x00A8CB24]",
+              "\t(No symbol) [0x00A73736]",
+              "\t(No symbol) [0x00A47541]",
+              "\t(No symbol) [0x00A480BD]",
+              "\tGetHandleVerifier [0x00E33AB3+2876339]",
+              "\tGetHandleVerifier [0x00E87F7D+3221629]",
+              "\tGetHandleVerifier [0x00BFD674+556916]",
+              "\tGetHandleVerifier [0x00C0478C+585868]",
+              "\t(No symbol) [0x00B1CE44]",
+              "\t(No symbol) [0x00B19858]",
+              "\t(No symbol) [0x00B199F7]",
+              "\t(No symbol) [0x00B0BF4E]",
+              "\tBaseThreadInitThunk [0x764B7BA9+25]",
+              "\tRtlInitializeExceptionChain [0x7702C10B+107]",
+              "\tRtlClearBits [0x7702C08F+191]",
+              "",
+              "",
+              "Captured logging:",
+              "INFO:WDM:====== WebDriver manager ======",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Driver [C:\\Users\\user\\.wdm\\drivers\\chromedriver\\win64\\126.0.6478.182\\chromedriver-win32/chromedriver.exe] found in cache"
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/login.feature:1",
+  "name": "Registro de usuarios",
+  "status": "failed",
+  "tags": []
+}
+]

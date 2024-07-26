@@ -1,0 +1,291 @@
+
+    <html>
+    <head>
+        <title>Test Report</title>
+        <style>
+            body { font-family: Arial, sans-serif; }
+            h1 { color: #333; }
+            h2 { color: #666; }
+            h3 { color: #999; }
+            p { font-size: 14px; }
+            img { max-width: 500px; margin-top: 10px; }
+        </style>
+    </head>
+    <body>
+    <h1>Test Report</h1><h2>Feature: Registro de usuarios</h2><h3>Scenario: Registro exitoso</h3><p>Given I navigate to the register page: passed</p><img src="file://C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\reports\screenshots\I_navigate_to_the_register_page.png" alt="I_navigate_to_the_register_page"><br><p>When I enter valid data for each field: passed</p><img src="file://C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\reports\screenshots\I_enter_valid_data_for_each_field.png" alt="I_enter_valid_data_for_each_field"><br><p>Then I should see a confirmation message: failed</p><pre>Traceback (most recent call last):
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\behave\model.py", line 1329, in run
+    match.run(runner.context)
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\behave\matchers.py", line 98, in run
+    self.func(context, *args, **kwargs)
+  File "features\steps\steps.py", line 40, in step_impl
+    assert context.driver.find_element(By.CSS_SELECTOR, ".message").text == "Datos ingresado."
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 748, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":".message"}
+  (Session info: chrome=126.0.6478.185); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00B7C203+27395]
+	(No symbol) [0x00B13E04]
+	(No symbol) [0x00A11B7F]
+	(No symbol) [0x00A52C65]
+	(No symbol) [0x00A52D3B]
+	(No symbol) [0x00A8EC82]
+	(No symbol) [0x00A739E4]
+	(No symbol) [0x00A8CB24]
+	(No symbol) [0x00A73736]
+	(No symbol) [0x00A47541]
+	(No symbol) [0x00A480BD]
+	GetHandleVerifier [0x00E33AB3+2876339]
+	GetHandleVerifier [0x00E87F7D+3221629]
+	GetHandleVerifier [0x00BFD674+556916]
+	GetHandleVerifier [0x00C0478C+585868]
+	(No symbol) [0x00B1CE44]
+	(No symbol) [0x00B19858]
+	(No symbol) [0x00B199F7]
+	(No symbol) [0x00B0BF4E]
+	BaseThreadInitThunk [0x764B7BA9+25]
+	RtlInitializeExceptionChain [0x7702C10B+107]
+	RtlClearBits [0x7702C08F+191]
+
+
+Captured logging:
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome
+INFO:WDM:Get LATEST chromedriver version for google-chrome
+INFO:WDM:Driver [C:\Users\user\.wdm\drivers\chromedriver\win64\126.0.6478.182\chromedriver-win32/chromedriver.exe] found in cache</pre><h3>Scenario: Campos en blanco</h3><p>Given I navigate to the register page: passed</p><img src="file://C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\reports\screenshots\I_navigate_to_the_register_page.png" alt="I_navigate_to_the_register_page"><br><p>When I leave all fields empty: passed</p><img src="file://C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\reports\screenshots\I_leave_all_fields_empty.png" alt="I_leave_all_fields_empty"><br><p>Then I should see a message: passed</p><img src="file://C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\reports\screenshots\I_should_see_a_message.png" alt="I_should_see_a_message"><br><h3>Scenario: Nombre con números</h3><p>Given I navigate to the register page: passed</p><img src="file://C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\reports\screenshots\I_navigate_to_the_register_page.png" alt="I_navigate_to_the_register_page"><br><p>When I enter a name with numbers: passed</p><img src="file://C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\reports\screenshots\I_enter_a_name_with_numbers.png" alt="I_enter_a_name_with_numbers"><br><p>Then I should see a alert message: failed</p><pre>Traceback (most recent call last):
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\behave\model.py", line 1329, in run
+    match.run(runner.context)
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\behave\matchers.py", line 98, in run
+    self.func(context, *args, **kwargs)
+  File "features\steps\steps.py", line 70, in step_impl
+    assert context.driver.find_element(By.CSS_SELECTOR, ".message").text == "Complete la información correctamente."
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 748, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":".message"}
+  (Session info: chrome=126.0.6478.185); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00B7C203+27395]
+	(No symbol) [0x00B13E04]
+	(No symbol) [0x00A11B7F]
+	(No symbol) [0x00A52C65]
+	(No symbol) [0x00A52D3B]
+	(No symbol) [0x00A8EC82]
+	(No symbol) [0x00A739E4]
+	(No symbol) [0x00A8CB24]
+	(No symbol) [0x00A73736]
+	(No symbol) [0x00A47541]
+	(No symbol) [0x00A480BD]
+	GetHandleVerifier [0x00E33AB3+2876339]
+	GetHandleVerifier [0x00E87F7D+3221629]
+	GetHandleVerifier [0x00BFD674+556916]
+	GetHandleVerifier [0x00C0478C+585868]
+	(No symbol) [0x00B1CE44]
+	(No symbol) [0x00B19858]
+	(No symbol) [0x00B199F7]
+	(No symbol) [0x00B0BF4E]
+	BaseThreadInitThunk [0x764B7BA9+25]
+	RtlInitializeExceptionChain [0x7702C10B+107]
+	RtlClearBits [0x7702C08F+191]
+
+
+Captured logging:
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome
+INFO:WDM:Get LATEST chromedriver version for google-chrome
+INFO:WDM:Driver [C:\Users\user\.wdm\drivers\chromedriver\win64\126.0.6478.182\chromedriver-win32/chromedriver.exe] found in cache</pre><h3>Scenario: Apellido con números</h3><p>Given I navigate to the register page: passed</p><img src="file://C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\reports\screenshots\I_navigate_to_the_register_page.png" alt="I_navigate_to_the_register_page"><br><p>When I enter a lastname with numbers: passed</p><img src="file://C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\reports\screenshots\I_enter_a_lastname_with_numbers.png" alt="I_enter_a_lastname_with_numbers"><br><p>Then I should see a alert message: failed</p><pre>Traceback (most recent call last):
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\behave\model.py", line 1329, in run
+    match.run(runner.context)
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\behave\matchers.py", line 98, in run
+    self.func(context, *args, **kwargs)
+  File "features\steps\steps.py", line 70, in step_impl
+    assert context.driver.find_element(By.CSS_SELECTOR, ".message").text == "Complete la información correctamente."
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 748, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":".message"}
+  (Session info: chrome=126.0.6478.185); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00B7C203+27395]
+	(No symbol) [0x00B13E04]
+	(No symbol) [0x00A11B7F]
+	(No symbol) [0x00A52C65]
+	(No symbol) [0x00A52D3B]
+	(No symbol) [0x00A8EC82]
+	(No symbol) [0x00A739E4]
+	(No symbol) [0x00A8CB24]
+	(No symbol) [0x00A73736]
+	(No symbol) [0x00A47541]
+	(No symbol) [0x00A480BD]
+	GetHandleVerifier [0x00E33AB3+2876339]
+	GetHandleVerifier [0x00E87F7D+3221629]
+	GetHandleVerifier [0x00BFD674+556916]
+	GetHandleVerifier [0x00C0478C+585868]
+	(No symbol) [0x00B1CE44]
+	(No symbol) [0x00B19858]
+	(No symbol) [0x00B199F7]
+	(No symbol) [0x00B0BF4E]
+	BaseThreadInitThunk [0x764B7BA9+25]
+	RtlInitializeExceptionChain [0x7702C10B+107]
+	RtlClearBits [0x7702C08F+191]
+
+
+Captured logging:
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome
+INFO:WDM:Get LATEST chromedriver version for google-chrome
+INFO:WDM:Driver [C:\Users\user\.wdm\drivers\chromedriver\win64\126.0.6478.182\chromedriver-win32/chromedriver.exe] found in cache</pre><h3>Scenario: Fechas de nacimiento muy antiguas</h3><p>Given I navigate to the register page: passed</p><img src="file://C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\reports\screenshots\I_navigate_to_the_register_page.png" alt="I_navigate_to_the_register_page"><br><p>When I enter an excessively old birth date: passed</p><img src="file://C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\reports\screenshots\I_enter_an_excessively_old_birth_date.png" alt="I_enter_an_excessively_old_birth_date"><br><p>Then I should see a alert message: failed</p><pre>Traceback (most recent call last):
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\behave\model.py", line 1329, in run
+    match.run(runner.context)
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\behave\matchers.py", line 98, in run
+    self.func(context, *args, **kwargs)
+  File "features\steps\steps.py", line 70, in step_impl
+    assert context.driver.find_element(By.CSS_SELECTOR, ".message").text == "Complete la información correctamente."
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 748, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":".message"}
+  (Session info: chrome=126.0.6478.185); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00B7C203+27395]
+	(No symbol) [0x00B13E04]
+	(No symbol) [0x00A11B7F]
+	(No symbol) [0x00A52C65]
+	(No symbol) [0x00A52D3B]
+	(No symbol) [0x00A8EC82]
+	(No symbol) [0x00A739E4]
+	(No symbol) [0x00A8CB24]
+	(No symbol) [0x00A73736]
+	(No symbol) [0x00A47541]
+	(No symbol) [0x00A480BD]
+	GetHandleVerifier [0x00E33AB3+2876339]
+	GetHandleVerifier [0x00E87F7D+3221629]
+	GetHandleVerifier [0x00BFD674+556916]
+	GetHandleVerifier [0x00C0478C+585868]
+	(No symbol) [0x00B1CE44]
+	(No symbol) [0x00B19858]
+	(No symbol) [0x00B199F7]
+	(No symbol) [0x00B0BF4E]
+	BaseThreadInitThunk [0x764B7BA9+25]
+	RtlInitializeExceptionChain [0x7702C10B+107]
+	RtlClearBits [0x7702C08F+191]
+
+
+Captured logging:
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome
+INFO:WDM:Get LATEST chromedriver version for google-chrome
+INFO:WDM:Driver [C:\Users\user\.wdm\drivers\chromedriver\win64\126.0.6478.182\chromedriver-win32/chromedriver.exe] found in cache</pre><h3>Scenario: Edad menor a 18 años</h3><p>Given I navigate to the register page: passed</p><img src="file://C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\reports\screenshots\I_navigate_to_the_register_page.png" alt="I_navigate_to_the_register_page"><br><p>When I enter the birth date of a underage person: passed</p><img src="file://C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\reports\screenshots\I_enter_the_birth_date_of_a_underage_person.png" alt="I_enter_the_birth_date_of_a_underage_person"><br><p>Then I should see a alert message: failed</p><pre>Traceback (most recent call last):
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\behave\model.py", line 1329, in run
+    match.run(runner.context)
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\behave\matchers.py", line 98, in run
+    self.func(context, *args, **kwargs)
+  File "features\steps\steps.py", line 70, in step_impl
+    assert context.driver.find_element(By.CSS_SELECTOR, ".message").text == "Complete la información correctamente."
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 748, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":".message"}
+  (Session info: chrome=126.0.6478.185); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00B7C203+27395]
+	(No symbol) [0x00B13E04]
+	(No symbol) [0x00A11B7F]
+	(No symbol) [0x00A52C65]
+	(No symbol) [0x00A52D3B]
+	(No symbol) [0x00A8EC82]
+	(No symbol) [0x00A739E4]
+	(No symbol) [0x00A8CB24]
+	(No symbol) [0x00A73736]
+	(No symbol) [0x00A47541]
+	(No symbol) [0x00A480BD]
+	GetHandleVerifier [0x00E33AB3+2876339]
+	GetHandleVerifier [0x00E87F7D+3221629]
+	GetHandleVerifier [0x00BFD674+556916]
+	GetHandleVerifier [0x00C0478C+585868]
+	(No symbol) [0x00B1CE44]
+	(No symbol) [0x00B19858]
+	(No symbol) [0x00B199F7]
+	(No symbol) [0x00B0BF4E]
+	BaseThreadInitThunk [0x764B7BA9+25]
+	RtlInitializeExceptionChain [0x7702C10B+107]
+	RtlClearBits [0x7702C08F+191]
+
+
+Captured logging:
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome
+INFO:WDM:Get LATEST chromedriver version for google-chrome
+INFO:WDM:Driver [C:\Users\user\.wdm\drivers\chromedriver\win64\126.0.6478.182\chromedriver-win32/chromedriver.exe] found in cache</pre><h3>Scenario: Cedula con valor negativo</h3><p>Given I navigate to the register page: passed</p><img src="file://C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\reports\screenshots\I_navigate_to_the_register_page.png" alt="I_navigate_to_the_register_page"><br><p>When I enter a negative number in id field: passed</p><img src="file://C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\reports\screenshots\I_enter_a_negative_number_in_id_field.png" alt="I_enter_a_negative_number_in_id_field"><br><p>Then I should see a alert message: failed</p><pre>Traceback (most recent call last):
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\behave\model.py", line 1329, in run
+    match.run(runner.context)
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\behave\matchers.py", line 98, in run
+    self.func(context, *args, **kwargs)
+  File "features\steps\steps.py", line 70, in step_impl
+    assert context.driver.find_element(By.CSS_SELECTOR, ".message").text == "Complete la información correctamente."
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 748, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\user\Downloads\QuintoSemestre\IngenieriaRequisitos\Tests\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":".message"}
+  (Session info: chrome=126.0.6478.185); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00B7C203+27395]
+	(No symbol) [0x00B13E04]
+	(No symbol) [0x00A11B7F]
+	(No symbol) [0x00A52C65]
+	(No symbol) [0x00A52D3B]
+	(No symbol) [0x00A8EC82]
+	(No symbol) [0x00A739E4]
+	(No symbol) [0x00A8CB24]
+	(No symbol) [0x00A73736]
+	(No symbol) [0x00A47541]
+	(No symbol) [0x00A480BD]
+	GetHandleVerifier [0x00E33AB3+2876339]
+	GetHandleVerifier [0x00E87F7D+3221629]
+	GetHandleVerifier [0x00BFD674+556916]
+	GetHandleVerifier [0x00C0478C+585868]
+	(No symbol) [0x00B1CE44]
+	(No symbol) [0x00B19858]
+	(No symbol) [0x00B199F7]
+	(No symbol) [0x00B0BF4E]
+	BaseThreadInitThunk [0x764B7BA9+25]
+	RtlInitializeExceptionChain [0x7702C10B+107]
+	RtlClearBits [0x7702C08F+191]
+
+
+Captured logging:
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome
+INFO:WDM:Get LATEST chromedriver version for google-chrome
+INFO:WDM:Driver [C:\Users\user\.wdm\drivers\chromedriver\win64\126.0.6478.182\chromedriver-win32/chromedriver.exe] found in cache</pre></body></html>
