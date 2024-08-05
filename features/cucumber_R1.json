@@ -1,0 +1,202 @@
+[
+  {
+    "uri": "catalogo.feature",
+    "id": "catalogo-de-servicios",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Catalogo de servicios",
+    "description": "",
+    "elements": [
+      {
+        "id": "ver-la-imagen-de-inicio-del-men\u00fa-de-bartender",
+        "line": 3,
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "Ver la imagen de inicio del men\u00fa de bartender",
+        "description": "",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given",
+            "line": 4,
+            "name": "navego a la p\u00e1gina del men\u00fa",
+            "result": {
+              "status": "passed",
+              "duration": 4.785383462905884
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When",
+            "line": 5,
+            "name": "selecciono el servicio de bartender",
+            "result": {
+              "status": "passed",
+              "duration": 0.2418508529663086
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then",
+            "line": 6,
+            "name": "deber\u00eda ver la imagen de inicio del men\u00fa de bartender",
+            "result": {
+              "status": "passed",
+              "duration": 2.3909990787506104
+            }
+          }
+        ]
+      },
+      {
+        "id": "ver-la-imagen-de-fin-del-men\u00fa-de-bartender",
+        "line": 8,
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "Ver la imagen de fin del men\u00fa de bartender",
+        "description": "",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given",
+            "line": 9,
+            "name": "navego a la p\u00e1gina del men\u00fa",
+            "result": {
+              "status": "passed",
+              "duration": 4.678823709487915
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When",
+            "line": 10,
+            "name": "selecciono el servicio de bartender",
+            "result": {
+              "status": "passed",
+              "duration": 0.23094773292541504
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And",
+            "line": 11,
+            "name": "navego a la \u00faltima p\u00e1gina del men\u00fa de bartender",
+            "result": {
+              "status": "passed",
+              "duration": 7.529548645019531
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then",
+            "line": 12,
+            "name": "deber\u00eda ver la imagen de fin del men\u00fa de bartender",
+            "result": {
+              "status": "failed",
+              "duration": 2.32513427734375
+            }
+          }
+        ]
+      },
+      {
+        "id": "volver-a-la-imagen-de-inicio-del-men\u00fa-de-bartender-desde-la-\u00faltima-p\u00e1gina",
+        "line": 14,
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "Volver a la imagen de inicio del men\u00fa de bartender desde la \u00faltima p\u00e1gina",
+        "description": "",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given",
+            "line": 15,
+            "name": "navego a la p\u00e1gina del men\u00fa",
+            "result": {
+              "status": "passed",
+              "duration": 4.724252700805664
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When",
+            "line": 16,
+            "name": "selecciono el servicio de bartender",
+            "result": {
+              "status": "passed",
+              "duration": 0.24637126922607422
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And",
+            "line": 17,
+            "name": "navego a la \u00faltima p\u00e1gina del men\u00fa de bartender",
+            "result": {
+              "status": "passed",
+              "duration": 7.530658483505249
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And",
+            "line": 18,
+            "name": "vuelvo a la primera p\u00e1gina del men\u00fa de bartender desde la \u00faltima p\u00e1gina",
+            "result": {
+              "status": "passed",
+              "duration": 7.5095720291137695
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then",
+            "line": 19,
+            "name": "deber\u00eda ver nuevamente la imagen de inicio del men\u00fa de bartender",
+            "result": {
+              "status": "failed",
+              "duration": 2.3549015522003174
+            }
+          }
+        ]
+      },
+      {
+        "id": "ver-el-componente-de-catering",
+        "line": 21,
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "Ver el componente de catering",
+        "description": "",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given",
+            "line": 22,
+            "name": "navego a la p\u00e1gina del men\u00fa",
+            "result": {
+              "status": "passed",
+              "duration": 4.69270658493042
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When",
+            "line": 23,
+            "name": "selecciono el servicio de catering y navego a la secci\u00f3n de catering",
+            "result": {
+              "status": "passed",
+              "duration": 0.33149147033691406
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then",
+            "line": 24,
+            "name": "deber\u00eda ver el componente de catering",
+            "result": {
+              "status": "failed",
+              "duration": 2.272806406021118
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

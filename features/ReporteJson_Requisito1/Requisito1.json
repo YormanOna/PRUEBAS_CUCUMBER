@@ -1,0 +1,285 @@
+[
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "catalogo.feature:3",
+      "name": "Ver la imagen de inicio del men\u00fa de bartender",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "catalogo.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:17"
+          },
+          "name": "navego a la p\u00e1gina del men\u00fa",
+          "result": {
+            "duration": 4.785383462905884,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "catalogo.feature:5",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:24"
+          },
+          "name": "selecciono el servicio de bartender",
+          "result": {
+            "duration": 0.2418508529663086,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "catalogo.feature:6",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:32"
+          },
+          "name": "deber\u00eda ver la imagen de inicio del men\u00fa de bartender",
+          "result": {
+            "duration": 2.3909990787506104,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "catalogo.feature:8",
+      "name": "Ver la imagen de fin del men\u00fa de bartender",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "catalogo.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:17"
+          },
+          "name": "navego a la p\u00e1gina del men\u00fa",
+          "result": {
+            "duration": 4.678823709487915,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "catalogo.feature:10",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:24"
+          },
+          "name": "selecciono el servicio de bartender",
+          "result": {
+            "duration": 0.23094773292541504,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "catalogo.feature:11",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:46"
+          },
+          "name": "navego a la \u00faltima p\u00e1gina del men\u00fa de bartender",
+          "result": {
+            "duration": 7.529548645019531,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "catalogo.feature:12",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:56"
+          },
+          "name": "deber\u00eda ver la imagen de fin del men\u00fa de bartender",
+          "result": {
+            "duration": 2.32513427734375,
+            "error_message": [
+              "Assertion Failed: Fallando este escenario intencionalmente",
+              "Captured logging:",
+              "INFO:WDM:====== WebDriver manager ======",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Driver [C:\\Users\\HP\\.wdm\\drivers\\chromedriver\\win64\\127.0.6533.88\\chromedriver.exe] found in cache"
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "catalogo.feature:14",
+      "name": "Volver a la imagen de inicio del men\u00fa de bartender desde la \u00faltima p\u00e1gina",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "catalogo.feature:15",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:17"
+          },
+          "name": "navego a la p\u00e1gina del men\u00fa",
+          "result": {
+            "duration": 4.724252700805664,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "catalogo.feature:16",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:24"
+          },
+          "name": "selecciono el servicio de bartender",
+          "result": {
+            "duration": 0.24637126922607422,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "catalogo.feature:17",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:46"
+          },
+          "name": "navego a la \u00faltima p\u00e1gina del men\u00fa de bartender",
+          "result": {
+            "duration": 7.530658483505249,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "catalogo.feature:18",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:72"
+          },
+          "name": "vuelvo a la primera p\u00e1gina del men\u00fa de bartender desde la \u00faltima p\u00e1gina",
+          "result": {
+            "duration": 7.5095720291137695,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "catalogo.feature:19",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:82"
+          },
+          "name": "deber\u00eda ver nuevamente la imagen de inicio del men\u00fa de bartender",
+          "result": {
+            "duration": 2.3549015522003174,
+            "error_message": [
+              "Assertion Failed: Fallando este escenario intencionalmente",
+              "Captured logging:",
+              "INFO:WDM:====== WebDriver manager ======",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Driver [C:\\Users\\HP\\.wdm\\drivers\\chromedriver\\win64\\127.0.6533.88\\chromedriver.exe] found in cache"
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "catalogo.feature:21",
+      "name": "Ver el componente de catering",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "catalogo.feature:22",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:17"
+          },
+          "name": "navego a la p\u00e1gina del men\u00fa",
+          "result": {
+            "duration": 4.69270658493042,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "catalogo.feature:23",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:98"
+          },
+          "name": "selecciono el servicio de catering y navego a la secci\u00f3n de catering",
+          "result": {
+            "duration": 0.33149147033691406,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "catalogo.feature:24",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:106"
+          },
+          "name": "deber\u00eda ver el componente de catering",
+          "result": {
+            "duration": 2.272806406021118,
+            "error_message": [
+              "Assertion Failed: Fallando este escenario intencionalmente",
+              "Captured logging:",
+              "INFO:WDM:====== WebDriver manager ======",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Driver [C:\\Users\\HP\\.wdm\\drivers\\chromedriver\\win64\\127.0.6533.88\\chromedriver.exe] found in cache"
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "catalogo.feature:1",
+  "name": "Catalogo de servicios",
+  "status": "failed",
+  "tags": []
+}
+]

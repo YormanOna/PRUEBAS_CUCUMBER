@@ -1,0 +1,212 @@
+[
+  {
+    "uri": "login_tests.feature",
+    "id": "login-functionality",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login functionality",
+    "description": "",
+    "elements": [
+      {
+        "id": "successful-login",
+        "line": 3,
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "Successful login",
+        "description": "",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given",
+            "line": 4,
+            "name": "I navigate to the login page",
+            "result": {
+              "status": "passed",
+              "duration": 5.3899664878845215
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When",
+            "line": 5,
+            "name": "I enter valid credentials",
+            "result": {
+              "status": "passed",
+              "duration": 0.45754528045654297
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then",
+            "line": 6,
+            "name": "I should see a success message and navigate to the menu",
+            "result": {
+              "status": "passed",
+              "duration": 5.552931308746338
+            }
+          }
+        ]
+      },
+      {
+        "id": "empty-fields",
+        "line": 8,
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "Empty fields",
+        "description": "",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given",
+            "line": 9,
+            "name": "I navigate to the login page",
+            "result": {
+              "status": "passed",
+              "duration": 4.852544546127319
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When",
+            "line": 10,
+            "name": "I leave all fields empty",
+            "result": {
+              "status": "passed",
+              "duration": 0.25405001640319824
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then",
+            "line": 11,
+            "name": "I should see a message indicating fields are required",
+            "result": {
+              "status": "failed",
+              "duration": 2.375187397003174
+            }
+          }
+        ]
+      },
+      {
+        "id": "invalid-username",
+        "line": 13,
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "Invalid username",
+        "description": "",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given",
+            "line": 14,
+            "name": "I navigate to the login page",
+            "result": {
+              "status": "passed",
+              "duration": 4.797948122024536
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When",
+            "line": 15,
+            "name": "I enter an invalid username",
+            "result": {
+              "status": "passed",
+              "duration": 0.49521517753601074
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then",
+            "line": 16,
+            "name": "I should see a username error message",
+            "result": {
+              "status": "failed",
+              "duration": 2.3123819828033447
+            }
+          }
+        ]
+      },
+      {
+        "id": "invalid-password",
+        "line": 18,
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "Invalid password",
+        "description": "",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given",
+            "line": 19,
+            "name": "I navigate to the login page",
+            "result": {
+              "status": "passed",
+              "duration": 4.770312786102295
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When",
+            "line": 20,
+            "name": "I enter an invalid password",
+            "result": {
+              "status": "passed",
+              "duration": 0.5114877223968506
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then",
+            "line": 21,
+            "name": "I should see a password error message",
+            "result": {
+              "status": "failed",
+              "duration": 2.3050801753997803
+            }
+          }
+        ]
+      },
+      {
+        "id": "invalid-credentials",
+        "line": 23,
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "Invalid credentials",
+        "description": "",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given",
+            "line": 24,
+            "name": "I navigate to the login page",
+            "result": {
+              "status": "passed",
+              "duration": 4.752087354660034
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When",
+            "line": 25,
+            "name": "I enter invalid credentials",
+            "result": {
+              "status": "passed",
+              "duration": 0.5462822914123535
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then",
+            "line": 26,
+            "name": "I should see an invalid credentials error message",
+            "result": {
+              "status": "failed",
+              "duration": 2.2879419326782227
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

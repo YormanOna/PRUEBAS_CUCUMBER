@@ -1,0 +1,292 @@
+[
+  {
+    "uri": "login.feature",
+    "id": "registro-de-usuarios",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Registro de usuarios",
+    "description": "",
+    "elements": [
+      {
+        "id": "registro-exitoso",
+        "line": 3,
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "Registro exitoso",
+        "description": "",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given",
+            "line": 4,
+            "name": "I navigate to the register page",
+            "result": {
+              "status": "passed",
+              "duration": 4.923498868942261
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When",
+            "line": 5,
+            "name": "I enter valid data for each field",
+            "result": {
+              "status": "passed",
+              "duration": 1.1595523357391357
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then",
+            "line": 6,
+            "name": "I should see a confirmation message",
+            "result": {
+              "status": "passed",
+              "duration": 4.459840536117554
+            }
+          }
+        ]
+      },
+      {
+        "id": "campos-en-blanco",
+        "line": 8,
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "Campos en blanco",
+        "description": "",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given",
+            "line": 9,
+            "name": "I navigate to the register page",
+            "result": {
+              "status": "passed",
+              "duration": 4.600398540496826
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When",
+            "line": 10,
+            "name": "I leave all fields empty",
+            "result": {
+              "status": "passed",
+              "duration": 0.16621804237365723
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then",
+            "line": 11,
+            "name": "I should see a message",
+            "result": {
+              "status": "failed",
+              "duration": 10.395618200302124
+            }
+          }
+        ]
+      },
+      {
+        "id": "nombre-con-n\u00fameros",
+        "line": 13,
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "Nombre con n\u00fameros",
+        "description": "",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given",
+            "line": 14,
+            "name": "I navigate to the register page",
+            "result": {
+              "status": "passed",
+              "duration": 5.511928558349609
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When",
+            "line": 15,
+            "name": "I enter a name with numbers",
+            "result": {
+              "status": "passed",
+              "duration": 1.360109567642212
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then",
+            "line": 16,
+            "name": "I should see a alert message",
+            "result": {
+              "status": "failed",
+              "duration": 10.272953271865845
+            }
+          }
+        ]
+      },
+      {
+        "id": "apellido-con-n\u00fameros",
+        "line": 18,
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "Apellido con n\u00fameros",
+        "description": "",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given",
+            "line": 19,
+            "name": "I navigate to the register page",
+            "result": {
+              "status": "passed",
+              "duration": 5.386648654937744
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When",
+            "line": 20,
+            "name": "I enter a lastname with numbers",
+            "result": {
+              "status": "passed",
+              "duration": 1.4487929344177246
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then",
+            "line": 21,
+            "name": "I should see a alert message",
+            "result": {
+              "status": "failed",
+              "duration": 10.347838401794434
+            }
+          }
+        ]
+      },
+      {
+        "id": "fechas-de-nacimiento-muy-antiguas",
+        "line": 23,
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "Fechas de nacimiento muy antiguas",
+        "description": "",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given",
+            "line": 24,
+            "name": "I navigate to the register page",
+            "result": {
+              "status": "passed",
+              "duration": 5.574055194854736
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When",
+            "line": 25,
+            "name": "I enter an excessively old birth date",
+            "result": {
+              "status": "passed",
+              "duration": 1.5096781253814697
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then",
+            "line": 26,
+            "name": "I should see a alert message",
+            "result": {
+              "status": "failed",
+              "duration": 10.314616680145264
+            }
+          }
+        ]
+      },
+      {
+        "id": "edad-menor-a-18-a\u00f1os",
+        "line": 28,
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "Edad menor a 18 a\u00f1os",
+        "description": "",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given",
+            "line": 29,
+            "name": "I navigate to the register page",
+            "result": {
+              "status": "passed",
+              "duration": 5.849142074584961
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When",
+            "line": 30,
+            "name": "I enter the birth date of an underage person",
+            "result": {
+              "status": "failed",
+              "duration": 0.015740394592285156
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then",
+            "line": 31,
+            "name": "I should see an underage validation message",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": "cedula-con-valor-negativo",
+        "line": 33,
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "Cedula con valor negativo",
+        "description": "",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given",
+            "line": 34,
+            "name": "I navigate to the register page",
+            "result": {
+              "status": "passed",
+              "duration": 6.244941473007202
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When",
+            "line": 35,
+            "name": "I enter a negative number in id field",
+            "result": {
+              "status": "failed",
+              "duration": 0.16663289070129395
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then",
+            "line": 36,
+            "name": "I should see an id validation message",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
