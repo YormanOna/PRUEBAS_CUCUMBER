@@ -9,108 +9,124 @@ from selenium.webdriver.common.by import By
 import os
 
 def take_screenshot(context, step_name):
-    screenshot_dir = 'Requisito5/screenshots'
+    screenshot_dir = 'Requisito6/screenshots'
     os.makedirs(screenshot_dir, exist_ok=True)
     screenshot_path = os.path.join(screenshot_dir, f"{step_name}.png")
     context.driver.save_screenshot(screenshot_path)
 
-@given('navego a la página del calendario')
+@given('navego a la página de cotización')
 def step_impl(context):
     options = webdriver.ChromeOptions()
     context.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
-    context.driver.get("http://localhost:5173/calendario")
-    take_screenshot(context, 'navego_a_la_pagina_del_calendario')
+    context.driver.get("http://localhost:5173/cotizacion")
+    take_screenshot(context, 'navego_a_la_pagina_de_cotizacion')
 
-@when('selecciono una fecha disponible')
+@when('selecciono un servicio y una fecha y genero la cotización')
 def step_impl(context):
-    date_card = WebDriverWait(context.driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, "//div[contains(@class, 'available')]"))
+    service_select = WebDriverWait(context.driver, 10).until(
+        EC.element_to_be_clickable((By.ID, "service"))
     )
-    date_card.click()
-    take_screenshot(context, 'selecciono_una_fecha_disponible')
+    service_select.send_keys("Bartending")
+    date_input = context.driver.find_element(By.ID, "date")
+    date_input.send_keys("2023-06-20")
+    generate_button = context.driver.find_element(By.ID, "generate-quote")
+    generate_button.click()
+    take_screenshot(context, 'selecciono_un_servicio_y_una_fecha_y_genero_la_cotizacion')
 
-@then('debería ver la información de la fecha seleccionada')
+@then('debería ver la cotización detallada')
 def step_impl(context):
     try:
-        selected_date_info = WebDriverWait(context.driver, 20).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, ".bg-card"))
+        quote_result = WebDriverWait(context.driver, 20).until(
+            EC.presence_of_element_located((By.ID, "quote-result"))
         )
-        assert selected_date_info is not None
-        take_screenshot(context, 'deberia_ver_la_informacion_de_la_fecha_seleccionada')
+        assert quote_result is not None
+        take_screenshot(context, 'deberia_ver_la_cotizacion_detallada')
     except Exception as e:
-        take_screenshot(context, 'deberia_ver_la_informacion_de_la_fecha_seleccionada_fail')
+        take_screenshot(context, 'deberia_ver_la_cotizacion_detallada_fail')
         raise e
     finally:
         context.driver.quit()
 
-@when('intento seleccionar una fecha reservada')
+@when('no lleno todos los campos y genero la cotización')
 def step_impl(context):
-    booked_date_card = WebDriverWait(context.driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, "//div[contains(@class, 'booked')]"))
+    generate_button = WebDriverWait(context.driver, 10).until(
+        EC.element_to_be_clickable((By.ID, "generate-quote"))
     )
-    booked_date_card.click()
-    take_screenshot(context, 'intento_seleccionar_una_fecha_reservada')
+    generate_button.click()
+    take_screenshot(context, 'no_lleno_todos_los_campos_y_genero_la_cotizacion')
 
 @then('debería ver un mensaje de error')
 def step_impl(context):
     try:
-        # Falla intencional
-        assert False, "Fallando este escenario intencionalmente"
-        error_message = WebDriverWait(context.driver, 20).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, ".error-message"))
+        alert = WebDriverWait(context.driver, 10).until(
+            EC.alert_is_present()
         )
-        assert error_message is not None
+        alert_text = alert.text
+        assert "Por favor, complete todos los campos." in alert_text
         take_screenshot(context, 'deberia_ver_un_mensaje_de_error')
+        alert.accept()
     except Exception as e:
         take_screenshot(context, 'deberia_ver_un_mensaje_de_error_fail')
         raise e
     finally:
         context.driver.quit()
 
-@when('selecciono una fecha con disponibilidad limitada')
+@when('selecciono extras y genero la cotización')
 def step_impl(context):
-    limited_date_card = WebDriverWait(context.driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, "//div[contains(@class, 'limited')]"))
+    service_select = WebDriverWait(context.driver, 10).until(
+        EC.element_to_be_clickable((By.ID, "service"))
     )
-    limited_date_card.click()
-    take_screenshot(context, 'selecciono_una_fecha_con_disponibilidad_limitada')
+    service_select.send_keys("Catering")
+    date_input = context.driver.find_element(By.ID, "date")
+    date_input.send_keys("2023-06-20")
+    dj_checkbox = context.driver.find_element(By.ID, "dj")
+    dj_checkbox.click()
+    lighting_checkbox = context.driver.find_element(By.ID, "lighting")
+    lighting_checkbox.click()
+    generate_button = context.driver.find_element(By.ID, "generate-quote")
+    generate_button.click()
+    take_screenshot(context, 'selecciono_extras_y_genero_la_cotizacion')
 
-@then('debería ver un mensaje de disponibilidad limitada')
+@then('debería ver la cotización detallada con los extras')
 def step_impl(context):
     try:
         # Falla intencional
         assert False, "Fallando este escenario intencionalmente"
-        limited_message = WebDriverWait(context.driver, 20).until(
-            EC.presence_of_element_located((By.XPATH, "//p[contains(text(), 'limited')]"))
+        quote_result = WebDriverWait(context.driver, 20).until(
+            EC.presence_of_element_located((By.ID, "quote-result"))
         )
-        assert limited_message is not None
-        take_screenshot(context, 'deberia_ver_un_mensaje_de_disponibilidad_limitada')
+        assert "DJ, Iluminación" in quote_result.text
+        take_screenshot(context, 'deberia_ver_la_cotizacion_detallada_con_los_extras')
     except Exception as e:
-        take_screenshot(context, 'deberia_ver_un_mensaje_de_disponibilidad_limitada_fail')
+        take_screenshot(context, 'deberia_ver_la_cotizacion_detallada_con_los_extras_fail')
         raise e
     finally:
         context.driver.quit()
 
-@when('hago clic en reservar ahora')
+@when('genero la cotización sin seleccionar servicio')
 def step_impl(context):
-    reserve_button = WebDriverWait(context.driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Reserve Now')]"))
+    date_input = WebDriverWait(context.driver, 10).until(
+        EC.element_to_be_clickable((By.ID, "date"))
     )
-    reserve_button.click()
-    take_screenshot(context, 'hago_clic_en_reservar_ahora')
+    date_input.send_keys("2023-06-20")
+    generate_button = context.driver.find_element(By.ID, "generate-quote")
+    generate_button.click()
+    take_screenshot(context, 'genero_la_cotizacion_sin_seleccionar_servicio')
 
-@then('debería ver la página de reserva')
+@then('debería ver un mensaje de error por falta de servicio')
 def step_impl(context):
     try:
         # Falla intencional
         assert False, "Fallando este escenario intencionalmente"
-        reserve_page = WebDriverWait(context.driver, 20).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, ".reserve-page"))
+        alert = WebDriverWait(context.driver, 10).until(
+            EC.alert_is_present()
         )
-        assert reserve_page is not None
-        take_screenshot(context, 'deberia_ver_la_pagina_de_reserva')
+        alert_text = alert.text
+        assert "Por favor, complete todos los campos." in alert_text
+        take_screenshot(context, 'deberia_ver_un_mensaje_de_error_por_falta_de_servicio')
+        alert.accept()
     except Exception as e:
-        take_screenshot(context, 'deberia_ver_la_pagina_de_reserva_fail')
+        take_screenshot(context, 'deberia_ver_un_mensaje_de_error_por_falta_de_servicio_fail')
         raise e
     finally:
         context.driver.quit()
