@@ -1,0 +1,172 @@
+[
+  {
+    "uri": "features/calendario.feature",
+    "id": "funcionalidad-del-calendario",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Funcionalidad del calendario",
+    "description": "",
+    "elements": [
+      {
+        "id": "ver-la-informaci\u00f3n-de-la-fecha-seleccionada",
+        "line": 3,
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "Ver la informaci\u00f3n de la fecha seleccionada",
+        "description": "",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given",
+            "line": 4,
+            "name": "navego a la p\u00e1gina del calendario",
+            "result": {
+              "status": "passed",
+              "duration": 9.65087103843689
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When",
+            "line": 5,
+            "name": "selecciono una fecha disponible",
+            "result": {
+              "status": "passed",
+              "duration": 0.4156374931335449
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then",
+            "line": 6,
+            "name": "deber\u00eda ver la informaci\u00f3n de la fecha seleccionada",
+            "result": {
+              "status": "passed",
+              "duration": 2.3405468463897705
+            }
+          }
+        ]
+      },
+      {
+        "id": "intentar-seleccionar-una-fecha-reservada",
+        "line": 8,
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "Intentar seleccionar una fecha reservada",
+        "description": "",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given",
+            "line": 9,
+            "name": "navego a la p\u00e1gina del calendario",
+            "result": {
+              "status": "passed",
+              "duration": 6.824660539627075
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When",
+            "line": 10,
+            "name": "intento seleccionar una fecha reservada",
+            "result": {
+              "status": "passed",
+              "duration": 0.26915740966796875
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then",
+            "line": 11,
+            "name": "deber\u00eda ver un mensaje de error",
+            "result": {
+              "status": "failed",
+              "duration": 2.2583205699920654
+            }
+          }
+        ]
+      },
+      {
+        "id": "seleccionar-una-fecha-con-disponibilidad-limitada",
+        "line": 13,
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "Seleccionar una fecha con disponibilidad limitada",
+        "description": "",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given",
+            "line": 14,
+            "name": "navego a la p\u00e1gina del calendario",
+            "result": {
+              "status": "passed",
+              "duration": 7.241330623626709
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When",
+            "line": 15,
+            "name": "selecciono una fecha con disponibilidad limitada",
+            "result": {
+              "status": "passed",
+              "duration": 0.2587006092071533
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then",
+            "line": 16,
+            "name": "deber\u00eda ver un mensaje de disponibilidad limitada",
+            "result": {
+              "status": "failed",
+              "duration": 2.224963903427124
+            }
+          }
+        ]
+      },
+      {
+        "id": "hacer-clic-en-reservar-ahora",
+        "line": 18,
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "Hacer clic en reservar ahora",
+        "description": "",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given",
+            "line": 19,
+            "name": "navego a la p\u00e1gina del calendario",
+            "result": {
+              "status": "passed",
+              "duration": 9.824552297592163
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When",
+            "line": 20,
+            "name": "hago clic en reservar ahora",
+            "result": {
+              "status": "passed",
+              "duration": 0.20185112953186035
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then",
+            "line": 21,
+            "name": "deber\u00eda ver la p\u00e1gina de reserva",
+            "result": {
+              "status": "failed",
+              "duration": 2.2064967155456543
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

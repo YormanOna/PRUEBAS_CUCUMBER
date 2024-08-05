@@ -56,10 +56,10 @@ def adapt_behave_to_cucumberjs(behave_json):
     return cucumber_js_json
 
 # Ejemplo de uso
-with open('./ReporteJson_Requisito4/Requisito4.json', 'r') as file:
+with open('./ReporteJson_Requisito5/Requisito5.json', 'r') as file:
     behave_json = json.load(file)
 
 cucumber_js_json = adapt_behave_to_cucumberjs(behave_json)
 
-with open('cucumber_R4.json', 'w') as file:
+with open('cucumber_R5.json', 'w') as file:
     json.dump(cucumber_js_json, file, indent=2)

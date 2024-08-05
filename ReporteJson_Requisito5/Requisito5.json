@@ -1,0 +1,243 @@
+[
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/calendario.feature:3",
+      "name": "Ver la informaci\u00f3n de la fecha seleccionada",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/calendario.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:17"
+          },
+          "name": "navego a la p\u00e1gina del calendario",
+          "result": {
+            "duration": 9.65087103843689,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/calendario.feature:5",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:24"
+          },
+          "name": "selecciono una fecha disponible",
+          "result": {
+            "duration": 0.4156374931335449,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/calendario.feature:6",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:32"
+          },
+          "name": "deber\u00eda ver la informaci\u00f3n de la fecha seleccionada",
+          "result": {
+            "duration": 2.3405468463897705,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "features/calendario.feature:8",
+      "name": "Intentar seleccionar una fecha reservada",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/calendario.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:17"
+          },
+          "name": "navego a la p\u00e1gina del calendario",
+          "result": {
+            "duration": 6.824660539627075,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/calendario.feature:10",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:46"
+          },
+          "name": "intento seleccionar una fecha reservada",
+          "result": {
+            "duration": 0.26915740966796875,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/calendario.feature:11",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:54"
+          },
+          "name": "deber\u00eda ver un mensaje de error",
+          "result": {
+            "duration": 2.2583205699920654,
+            "error_message": [
+              "Assertion Failed: Fallando este escenario intencionalmente",
+              "Captured logging:",
+              "INFO:WDM:====== WebDriver manager ======",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Driver [C:\\Users\\HP\\.wdm\\drivers\\chromedriver\\win64\\127.0.6533.88\\chromedriver.exe] found in cache"
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "features/calendario.feature:13",
+      "name": "Seleccionar una fecha con disponibilidad limitada",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/calendario.feature:14",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:17"
+          },
+          "name": "navego a la p\u00e1gina del calendario",
+          "result": {
+            "duration": 7.241330623626709,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/calendario.feature:15",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:70"
+          },
+          "name": "selecciono una fecha con disponibilidad limitada",
+          "result": {
+            "duration": 0.2587006092071533,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/calendario.feature:16",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:78"
+          },
+          "name": "deber\u00eda ver un mensaje de disponibilidad limitada",
+          "result": {
+            "duration": 2.224963903427124,
+            "error_message": [
+              "Assertion Failed: Fallando este escenario intencionalmente",
+              "Captured logging:",
+              "INFO:WDM:====== WebDriver manager ======",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Driver [C:\\Users\\HP\\.wdm\\drivers\\chromedriver\\win64\\127.0.6533.88\\chromedriver.exe] found in cache"
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "features/calendario.feature:18",
+      "name": "Hacer clic en reservar ahora",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/calendario.feature:19",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:17"
+          },
+          "name": "navego a la p\u00e1gina del calendario",
+          "result": {
+            "duration": 9.824552297592163,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/calendario.feature:20",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:94"
+          },
+          "name": "hago clic en reservar ahora",
+          "result": {
+            "duration": 0.20185112953186035,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/calendario.feature:21",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/steps.py:102"
+          },
+          "name": "deber\u00eda ver la p\u00e1gina de reserva",
+          "result": {
+            "duration": 2.2064967155456543,
+            "error_message": [
+              "Assertion Failed: Fallando este escenario intencionalmente",
+              "Captured logging:",
+              "INFO:WDM:====== WebDriver manager ======",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Driver [C:\\Users\\HP\\.wdm\\drivers\\chromedriver\\win64\\127.0.6533.88\\chromedriver.exe] found in cache"
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/calendario.feature:1",
+  "name": "Funcionalidad del calendario",
+  "status": "failed",
+  "tags": []
+}
+]
