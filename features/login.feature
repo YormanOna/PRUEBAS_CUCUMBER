@@ -34,6 +34,3 @@ Feature: Registro de usuarios
     Given I navigate to the register page
     When I enter a negative number in id field
     Then I should see a alert message
-  
-
-    
