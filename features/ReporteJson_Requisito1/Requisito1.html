@@ -1,0 +1,30 @@
+
+    <html>
+    <head>
+        <title>Test Report</title>
+        <style>
+            body { font-family: Arial, sans-serif; }
+            h1 { color: #333; }
+            h2 { color: #666; }
+            h3 { color: #999; }
+            p { font-size: 14px; }
+            img { max-width: 500px; margin-top: 10px; }
+        </style>
+    </head>
+    <body>
+    <h1>Test Report</h1><h2>Feature: Catalogo de servicios</h2><h3>Scenario: Ver la imagen de inicio del menú de bartender</h3><p>Given navego a la página del menú: passed</p><p>When selecciono el servicio de bartender: passed</p><p>Then debería ver la imagen de inicio del menú de bartender: passed</p><h3>Scenario: Ver la imagen de fin del menú de bartender</h3><p>Given navego a la página del menú: passed</p><p>When selecciono el servicio de bartender: passed</p><p>And navego a la última página del menú de bartender: passed</p><p>Then debería ver la imagen de fin del menú de bartender: failed</p><pre>Assertion Failed: Fallando este escenario intencionalmente
+Captured logging:
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome
+INFO:WDM:Get LATEST chromedriver version for google-chrome
+INFO:WDM:Driver [C:\Users\HP\.wdm\drivers\chromedriver\win64\127.0.6533.88\chromedriver.exe] found in cache</pre><h3>Scenario: Volver a la imagen de inicio del menú de bartender desde la última página</h3><p>Given navego a la página del menú: passed</p><p>When selecciono el servicio de bartender: passed</p><p>And navego a la última página del menú de bartender: passed</p><p>And vuelvo a la primera página del menú de bartender desde la última página: passed</p><p>Then debería ver nuevamente la imagen de inicio del menú de bartender: failed</p><pre>Assertion Failed: Fallando este escenario intencionalmente
+Captured logging:
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome
+INFO:WDM:Get LATEST chromedriver version for google-chrome
+INFO:WDM:Driver [C:\Users\HP\.wdm\drivers\chromedriver\win64\127.0.6533.88\chromedriver.exe] found in cache</pre><h3>Scenario: Ver el componente de catering</h3><p>Given navego a la página del menú: passed</p><p>When selecciono el servicio de catering y navego a la sección de catering: passed</p><p>Then debería ver el componente de catering: failed</p><pre>Assertion Failed: Fallando este escenario intencionalmente
+Captured logging:
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome
+INFO:WDM:Get LATEST chromedriver version for google-chrome
+INFO:WDM:Driver [C:\Users\HP\.wdm\drivers\chromedriver\win64\127.0.6533.88\chromedriver.exe] found in cache</pre></body></html>

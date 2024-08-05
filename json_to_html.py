@@ -41,4 +41,4 @@ def json_to_html(json_file, html_file):
     with open(html_file, 'w') as f:
         f.write(html_content)
 
-json_to_html('./reports/report.json', './reports/report.html')
+json_to_html('./features/ReporteJson_Requisito1/Requisito1.json', './features/ReporteJson_Requisito1/Requisito1.html')
