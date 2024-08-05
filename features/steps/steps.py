@@ -9,112 +9,114 @@ from selenium.webdriver.common.by import By
 import os
 
 def take_screenshot(context, step_name):
-    screenshot_dir = 'Requisito1/screenshots'
+    screenshot_dir = 'Requisito4/screenshots'
     os.makedirs(screenshot_dir, exist_ok=True)
     screenshot_path = os.path.join(screenshot_dir, f"{step_name}.png")
     context.driver.save_screenshot(screenshot_path)
 
-@given('navego a la página del menú')
+@given('navego al panel de administración')
 def step_impl(context):
     options = webdriver.ChromeOptions()
     context.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
-    context.driver.get("http://localhost:5173/menu")
-    take_screenshot(context, 'navego_a_la_pagina_del_menu')
+    context.driver.get("http://localhost:5173/admin")
+    take_screenshot(context, 'navego_al_panel_de_administracion')
 
-@when('selecciono el servicio de bartender')
+@when('selecciono la pestaña de cocteles')
 def step_impl(context):
     button = WebDriverWait(context.driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Servicio de Bartender')]"))
+        EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Cocteles')]"))
     )
     button.click()
-    take_screenshot(context, 'selecciono_el_servicio_de_bartender')
+    take_screenshot(context, 'selecciono_la_pestana_de_cocteles')
 
-@then('debería ver la imagen de inicio del menú de bartender')
+@then('debería ver el gestor de cocteles')
 def step_impl(context):
     try:
-        page_image = WebDriverWait(context.driver, 20).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "img[alt='Inicio']"))
+        coctel_manager = WebDriverWait(context.driver, 20).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, ".containerADmi"))
         )
-        assert page_image is not None
-        take_screenshot(context, 'deberia_ver_la_imagen_de_inicio_del_menu_de_bartender')
+        assert coctel_manager is not None
+        take_screenshot(context, 'deberia_ver_el_gestor_de_cocteles')
     except Exception as e:
-        take_screenshot(context, 'deberia_ver_la_imagen_de_inicio_del_menu_de_bartender_fail')
+        take_screenshot(context, 'deberia_ver_el_gestor_de_cocteles_fail')
         raise e
     finally:
         context.driver.quit()
 
-@when('navego a la última página del menú de bartender')
-def step_impl(context):
-    next_button = WebDriverWait(context.driver, 10).until(
-        EC.element_to_be_clickable((By.CSS_SELECTOR, ".nav-button.right"))
-    )
-    for _ in range(7):  # Navegar hasta la última página
-        next_button.click()
-        time.sleep(1)
-    take_screenshot(context, 'navego_a_la_ultima_pagina_del_menu_de_bartender')
-
-@then('debería ver la imagen de fin del menú de bartender')
-def step_impl(context):
-    try:
-        # Falla intencional
-        assert False, "Fallando este escenario intencionalmente"
-        page_image = WebDriverWait(context.driver, 20).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "img[alt='Fin']"))
-        )
-        assert page_image is not None
-        take_screenshot(context, 'deberia_ver_la_imagen_de_fin_del_menu_de_bartender')
-    except Exception as e:
-        take_screenshot(context, 'deberia_ver_la_imagen_de_fin_del_menu_de_bartender_fail')
-        raise e
-    finally:
-        context.driver.quit()
-
-@when('vuelvo a la primera página del menú de bartender desde la última página')
-def step_impl(context):
-    prev_button = WebDriverWait(context.driver, 10).until(
-        EC.element_to_be_clickable((By.CSS_SELECTOR, ".nav-button.left"))
-    )
-    for _ in range(7):  # Volver a la primera página
-        prev_button.click()
-        time.sleep(1)
-    take_screenshot(context, 'vuelvo_a_la_primera_pagina_del_menu_de_bartender_desde_la_ultima_pagina')
-
-@then('debería ver nuevamente la imagen de inicio del menú de bartender')
-def step_impl(context):
-    try:
-        # Falla intencional
-        assert False, "Fallando este escenario intencionalmente"
-        page_image = WebDriverWait(context.driver, 20).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "img[alt='Inicio']"))
-        )
-        assert page_image is not None
-        take_screenshot(context, 'deberia_ver_nuevamente_la_imagen_de_inicio_del_menu_de_bartender')
-    except Exception as e:
-        take_screenshot(context, 'deberia_ver_nuevamente_la_imagen_de_inicio_del_menu_de_bartender_fail')
-        raise e
-    finally:
-        context.driver.quit()
-
-@when('selecciono el servicio de catering y navego a la sección de catering')
+@when('agrego un nuevo coctel')
 def step_impl(context):
     button = WebDriverWait(context.driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Servicio de Catering')]"))
+        EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Registrar')]"))
     )
     button.click()
-    take_screenshot(context, 'selecciono_el_servicio_de_catering_y_navego_a_la_seccion_de_catering')
+    context.driver.find_element(By.NAME, "nombre").send_keys("Test Coctel")
+    context.driver.find_element(By.NAME, "tipo").send_keys("Test Tipo")
+    context.driver.find_element(By.NAME, "cantidad").send_keys("1")
+    context.driver.find_element(By.NAME, "garnishes").send_keys("Test Garnishes")
+    context.driver.find_element(By.NAME, "mixers").send_keys("Test Mixers")
+    context.driver.find_element(By.NAME, "imagen").send_keys(os.path.abspath("test_image.jpg"))
+    take_screenshot(context, 'agrego_un_nuevo_coctel')
 
-@then('debería ver el componente de catering')
+@then('debería ver el nuevo coctel en la lista')
 def step_impl(context):
     try:
         # Falla intencional
         assert False, "Fallando este escenario intencionalmente"
-        catering_component = WebDriverWait(context.driver, 20).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, ".catering-section"))
+        coctel = WebDriverWait(context.driver, 20).until(
+            EC.presence_of_element_located((By.XPATH, "//td[contains(text(), 'Test Coctel')]"))
         )
-        assert catering_component is not None
-        take_screenshot(context, 'deberia_ver_el_componente_de_catering')
+        assert coctel is not None
+        take_screenshot(context, 'deberia_ver_el_nuevo_coctel_en_la_lista')
     except Exception as e:
-        take_screenshot(context, 'deberia_ver_el_componente_de_catering_fail')
+        take_screenshot(context, 'deberia_ver_el_nuevo_coctel_en_la_lista_fail')
+        raise e
+    finally:
+        context.driver.quit()
+
+@when('elimino un coctel')
+def step_impl(context):
+    delete_button = WebDriverWait(context.driver, 10).until(
+        EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Eliminar')]"))
+    )
+    delete_button.click()
+    take_screenshot(context, 'elimino_un_coctel')
+
+@then('debería ver el coctel eliminado de la lista')
+def step_impl(context):
+    try:
+        # Falla intencional
+        assert False, "Fallando este escenario intencionalmente"
+        coctel = WebDriverWait(context.driver, 20).until_not(
+            EC.presence_of_element_located((By.XPATH, "//td[contains(text(), 'Test Coctel')]"))
+        )
+        assert coctel is None
+        take_screenshot(context, 'deberia_ver_el_coctel_eliminado_de_la_lista')
+    except Exception as e:
+        take_screenshot(context, 'deberia_ver_el_coctel_eliminado_de_la_lista_fail')
+        raise e
+    finally:
+        context.driver.quit()
+
+@when('selecciono la pestaña de paquetes')
+def step_impl(context):
+    button = WebDriverWait(context.driver, 10).until(
+        EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Paquetes')]"))
+    )
+    button.click()
+    take_screenshot(context, 'selecciono_la_pestana_de_paquetes')
+
+@then('debería ver el gestor de paquetes')
+def step_impl(context):
+    try:
+        # Falla intencional
+        assert False, "Fallando este escenario intencionalmente"
+        paquete_manager = WebDriverWait(context.driver, 20).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, ".paquete-manager"))
+        )
+        assert paquete_manager is not None
+        take_screenshot(context, 'deberia_ver_el_gestor_de_paquetes')
+    except Exception as e:
+        take_screenshot(context, 'deberia_ver_el_gestor_de_paquetes_fail')
         raise e
     finally:
         context.driver.quit()

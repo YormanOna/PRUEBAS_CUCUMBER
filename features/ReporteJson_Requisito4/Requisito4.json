@@ -1,0 +1,305 @@
+[
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "panelAdmin.feature:3",
+      "name": "Ver el gestor de cocteles",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "panelAdmin.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:17"
+          },
+          "name": "navego al panel de administraci\u00f3n",
+          "result": {
+            "duration": 4.69202733039856,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "panelAdmin.feature:5",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:24"
+          },
+          "name": "selecciono la pesta\u00f1a de cocteles",
+          "result": {
+            "duration": 0.16846823692321777,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "panelAdmin.feature:6",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:32"
+          },
+          "name": "deber\u00eda ver el gestor de cocteles",
+          "result": {
+            "duration": 2.259878158569336,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "panelAdmin.feature:8",
+      "name": "Agregar un nuevo coctel",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "panelAdmin.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:17"
+          },
+          "name": "navego al panel de administraci\u00f3n",
+          "result": {
+            "duration": 4.622826337814331,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "panelAdmin.feature:10",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:24"
+          },
+          "name": "selecciono la pesta\u00f1a de cocteles",
+          "result": {
+            "duration": 0.18894076347351074,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "panelAdmin.feature:11",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:46"
+          },
+          "name": "agrego un nuevo coctel",
+          "result": {
+            "duration": 0.703240156173706,
+            "error_message": [
+              "Traceback (most recent call last):",
+              "  File \"C:\\Users\\HP\\Documents\\ARCHIVOS_GIT\\PRUEBAS_CUCUMBER\\venv\\Lib\\site-packages\\behave\\model.py\", line 1329, in run",
+              "    match.run(runner.context)",
+              "  File \"C:\\Users\\HP\\Documents\\ARCHIVOS_GIT\\PRUEBAS_CUCUMBER\\venv\\Lib\\site-packages\\behave\\matchers.py\", line 98, in run",
+              "    self.func(context, *args, **kwargs)",
+              "  File \"steps\\steps.py\", line 57, in step_impl",
+              "    context.driver.find_element(By.NAME, \"imagen\").send_keys(os.path.abspath(\"test_image.jpg\"))",
+              "  File \"C:\\Users\\HP\\Documents\\ARCHIVOS_GIT\\PRUEBAS_CUCUMBER\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\webelement.py\", line 231, in send_keys",
+              "    self._execute(",
+              "  File \"C:\\Users\\HP\\Documents\\ARCHIVOS_GIT\\PRUEBAS_CUCUMBER\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\webelement.py\", line 395, in _execute",
+              "    return self._parent.execute(command, params)",
+              "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+              "  File \"C:\\Users\\HP\\Documents\\ARCHIVOS_GIT\\PRUEBAS_CUCUMBER\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py\", line 354, in execute",
+              "    self.error_handler.check_response(response)",
+              "  File \"C:\\Users\\HP\\Documents\\ARCHIVOS_GIT\\PRUEBAS_CUCUMBER\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py\", line 229, in check_response",
+              "    raise exception_class(message, screen, stacktrace)",
+              "selenium.common.exceptions.InvalidArgumentException: Message: invalid argument: File not found : C:\\Users\\HP\\Documents\\ARCHIVOS_GIT\\PRUEBAS_CUCUMBER\\features\\test_image.jpg",
+              "  (Session info: chrome=127.0.6533.89)",
+              "Stacktrace:",
+              "\tGetHandleVerifier [0x00BD8923+23283]",
+              "\t(No symbol) [0x00B9E934]",
+              "\t(No symbol) [0x00AD0733]",
+              "\t(No symbol) [0x00B0CD68]",
+              "\t(No symbol) [0x00B3441C]",
+              "\t(No symbol) [0x00B09485]",
+              "\t(No symbol) [0x00B346B4]",
+              "\t(No symbol) [0x00B4CB8D]",
+              "\t(No symbol) [0x00B341B6]",
+              "\t(No symbol) [0x00B08017]",
+              "\t(No symbol) [0x00B0890D]",
+              "\tGetHandleVerifier [0x00CCA5F3+1013699]",
+              "\tGetHandleVerifier [0x00CD3E4C+1052700]",
+              "\tGetHandleVerifier [0x00CCD4B4+1025668]",
+              "\tGetHandleVerifier [0x00BFEA2B+179195]",
+              "\t(No symbol) [0x00BA6833]",
+              "\t(No symbol) [0x00BA3198]",
+              "\t(No symbol) [0x00BA3337]",
+              "\t(No symbol) [0x00B9B4BE]",
+              "\tBaseThreadInitThunk [0x76417BA9+25]",
+              "\tRtlInitializeExceptionChain [0x77A2C10B+107]",
+              "\tRtlClearBits [0x77A2C08F+191]",
+              "",
+              "",
+              "Captured logging:",
+              "INFO:WDM:====== WebDriver manager ======",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Driver [C:\\Users\\HP\\.wdm\\drivers\\chromedriver\\win64\\127.0.6533.88\\chromedriver.exe] found in cache"
+            ],
+            "status": "failed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "panelAdmin.feature:12",
+          "name": "deber\u00eda ver el nuevo coctel en la lista",
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "panelAdmin.feature:14",
+      "name": "Eliminar un coctel",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "panelAdmin.feature:15",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:17"
+          },
+          "name": "navego al panel de administraci\u00f3n",
+          "result": {
+            "duration": 4.88257622718811,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "panelAdmin.feature:16",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:24"
+          },
+          "name": "selecciono la pesta\u00f1a de cocteles",
+          "result": {
+            "duration": 0.18223357200622559,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "panelAdmin.feature:17",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:76"
+          },
+          "name": "elimino un coctel",
+          "result": {
+            "duration": 1.246952772140503,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "panelAdmin.feature:18",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:84"
+          },
+          "name": "deber\u00eda ver el coctel eliminado de la lista",
+          "result": {
+            "duration": 2.2246463298797607,
+            "error_message": [
+              "Assertion Failed: Fallando este escenario intencionalmente",
+              "Captured logging:",
+              "INFO:WDM:====== WebDriver manager ======",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Driver [C:\\Users\\HP\\.wdm\\drivers\\chromedriver\\win64\\127.0.6533.88\\chromedriver.exe] found in cache"
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "panelAdmin.feature:20",
+      "name": "Ver el gestor de paquetes",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "panelAdmin.feature:21",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:17"
+          },
+          "name": "navego al panel de administraci\u00f3n",
+          "result": {
+            "duration": 5.217299938201904,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "panelAdmin.feature:22",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:100"
+          },
+          "name": "selecciono la pesta\u00f1a de paquetes",
+          "result": {
+            "duration": 0.2171027660369873,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "panelAdmin.feature:23",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:108"
+          },
+          "name": "deber\u00eda ver el gestor de paquetes",
+          "result": {
+            "duration": 2.2568061351776123,
+            "error_message": [
+              "Assertion Failed: Fallando este escenario intencionalmente",
+              "Captured logging:",
+              "INFO:WDM:====== WebDriver manager ======",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Driver [C:\\Users\\HP\\.wdm\\drivers\\chromedriver\\win64\\127.0.6533.88\\chromedriver.exe] found in cache"
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "panelAdmin.feature:1",
+  "name": "Panel de administraci\u00f3n",
+  "status": "failed",
+  "tags": []
+}
+]
