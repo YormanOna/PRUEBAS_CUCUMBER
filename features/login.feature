@@ -27,10 +27,10 @@ Feature: Registro de usuarios
 
   Scenario: Edad menor a 18 años
     Given I navigate to the register page
-    When I enter the birth date of a underage person
-    Then I should see a alert message
+    When I enter the birth date of an underage person
+    Then I should see an underage validation message
 
   Scenario: Cedula con valor negativo
     Given I navigate to the register page
     When I enter a negative number in id field
-    Then I should see a alert message
+    Then I should see an id validation message
