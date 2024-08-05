@@ -1,0 +1,303 @@
+[
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "login_tests.feature:3",
+      "name": "Successful login",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "login_tests.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:17"
+          },
+          "name": "I navigate to the login page",
+          "result": {
+            "duration": 5.3899664878845215,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "login_tests.feature:5",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:24"
+          },
+          "name": "I enter valid credentials",
+          "result": {
+            "duration": 0.45754528045654297,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "login_tests.feature:6",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:33"
+          },
+          "name": "I should see a success message and navigate to the menu",
+          "result": {
+            "duration": 5.552931308746338,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "login_tests.feature:8",
+      "name": "Empty fields",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "login_tests.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:17"
+          },
+          "name": "I navigate to the login page",
+          "result": {
+            "duration": 4.852544546127319,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "login_tests.feature:10",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:47"
+          },
+          "name": "I leave all fields empty",
+          "result": {
+            "duration": 0.25405001640319824,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "login_tests.feature:11",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:54"
+          },
+          "name": "I should see a message indicating fields are required",
+          "result": {
+            "duration": 2.375187397003174,
+            "error_message": [
+              "Assertion Failed: Failing this scenario intentionally",
+              "Captured logging:",
+              "INFO:WDM:====== WebDriver manager ======",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Driver [C:\\Users\\HP\\.wdm\\drivers\\chromedriver\\win64\\127.0.6533.88\\chromedriver.exe] found in cache"
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "login_tests.feature:13",
+      "name": "Invalid username",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "login_tests.feature:14",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:17"
+          },
+          "name": "I navigate to the login page",
+          "result": {
+            "duration": 4.797948122024536,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "login_tests.feature:15",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:71"
+          },
+          "name": "I enter an invalid username",
+          "result": {
+            "duration": 0.49521517753601074,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "login_tests.feature:16",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:80"
+          },
+          "name": "I should see a username error message",
+          "result": {
+            "duration": 2.3123819828033447,
+            "error_message": [
+              "Assertion Failed: Failing this scenario intentionally",
+              "Captured logging:",
+              "INFO:WDM:====== WebDriver manager ======",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Driver [C:\\Users\\HP\\.wdm\\drivers\\chromedriver\\win64\\127.0.6533.88\\chromedriver.exe] found in cache"
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "login_tests.feature:18",
+      "name": "Invalid password",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "login_tests.feature:19",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:17"
+          },
+          "name": "I navigate to the login page",
+          "result": {
+            "duration": 4.770312786102295,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "login_tests.feature:20",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:96"
+          },
+          "name": "I enter an invalid password",
+          "result": {
+            "duration": 0.5114877223968506,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "login_tests.feature:21",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:105"
+          },
+          "name": "I should see a password error message",
+          "result": {
+            "duration": 2.3050801753997803,
+            "error_message": [
+              "Assertion Failed: Failing this scenario intentionally",
+              "Captured logging:",
+              "INFO:WDM:====== WebDriver manager ======",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Driver [C:\\Users\\HP\\.wdm\\drivers\\chromedriver\\win64\\127.0.6533.88\\chromedriver.exe] found in cache"
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "login_tests.feature:23",
+      "name": "Invalid credentials",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "login_tests.feature:24",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:17"
+          },
+          "name": "I navigate to the login page",
+          "result": {
+            "duration": 4.752087354660034,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "login_tests.feature:25",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:121"
+          },
+          "name": "I enter invalid credentials",
+          "result": {
+            "duration": 0.5462822914123535,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "login_tests.feature:26",
+          "match": {
+            "arguments": [],
+            "location": "steps/steps.py:130"
+          },
+          "name": "I should see an invalid credentials error message",
+          "result": {
+            "duration": 2.2879419326782227,
+            "error_message": [
+              "Assertion Failed: Failing this scenario intentionally",
+              "Captured logging:",
+              "INFO:WDM:====== WebDriver manager ======",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Get LATEST chromedriver version for google-chrome",
+              "INFO:WDM:Driver [C:\\Users\\HP\\.wdm\\drivers\\chromedriver\\win64\\127.0.6533.88\\chromedriver.exe] found in cache"
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "login_tests.feature:1",
+  "name": "Login functionality",
+  "status": "failed",
+  "tags": []
+}
+]

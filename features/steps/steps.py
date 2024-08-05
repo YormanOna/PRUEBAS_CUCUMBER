@@ -9,177 +9,136 @@ from selenium.webdriver.common.by import By
 import os
 
 def take_screenshot(context, step_name):
-    screenshot_dir = 'reports_Requisito2/screenshots'
+    screenshot_dir = 'Requisito3/screenshots'
     os.makedirs(screenshot_dir, exist_ok=True)
     screenshot_path = os.path.join(screenshot_dir, f"{step_name}.png")
     context.driver.save_screenshot(screenshot_path)
 
-@given('I navigate to the register page')
+@given('I navigate to the login page')
 def step_impl(context):
     options = webdriver.ChromeOptions()
     context.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
-    context.driver.get("http://localhost:5173/registro")
-    take_screenshot(context, 'I_navigate_to_the_register_page')
+    context.driver.get("http://localhost:5173/login")
+    take_screenshot(context, 'I_navigate_to_the_login_page')
 
-@when('I enter valid data for each field')
+@when('I enter valid credentials')
 def step_impl(context):
-    context.driver.find_element(By.NAME, "nombre").send_keys("Silvia")
-    context.driver.find_element(By.NAME, "apellido").send_keys("Anasco")
-    context.driver.find_element(By.NAME, "cedula_ciudadania").send_keys("1753951076")
-    context.driver.find_element(By.NAME, "domicilio").send_keys("Chillogallo")
-    context.driver.find_element(By.NAME, "telefono").send_keys("0995227606")
-    context.driver.find_element(By.NAME, "email").send_keys("sianasco@espe.edu.ec")
-    context.driver.find_element(By.NAME, "fecha_nacimiento").send_keys("07-04-2004")
-    context.driver.find_element(By.NAME, "user").send_keys("sianasco1")
-    context.driver.find_element(By.NAME, "password").send_keys("password123")
-    
-    context.driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
-    take_screenshot(context, 'I_enter_valid_data_for_each_field')
+    context.driver.find_element(By.NAME, "nombreUsuario").send_keys("MIGUEL")
+    context.driver.find_element(By.NAME, "password").send_keys("4321")
+    take_screenshot(context, 'I_enter_valid_credentials')
+    submit_button = context.driver.find_element(By.ID, "login-submit-btn")
+    WebDriverWait(context.driver, 10).until(EC.element_to_be_clickable((By.ID, "login-submit-btn")))
+    submit_button.click()
 
-@then('I should see a confirmation message')
+@then('I should see a success message and navigate to the menu')
 def step_impl(context):
     try:
         message = WebDriverWait(context.driver, 20).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, ".butteruptoast.success .message"))
         ).text
-        assert message == "Datos ingresados correctamente."
-        take_screenshot(context, 'I_should_see_a_confirmation_message')
+        assert "Bienvenido al panel de administración." in message
+        take_screenshot(context, 'I_should_see_a_success_message')
     except Exception as e:
-        take_screenshot(context, 'I_should_see_a_confirmation_message_fail')
+        take_screenshot(context, 'I_should_see_a_success_message_fail')
         raise e
     finally:
         context.driver.quit()
 
 @when('I leave all fields empty')
 def step_impl(context):
-    context.driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
     take_screenshot(context, 'I_leave_all_fields_empty')
+    submit_button = context.driver.find_element(By.ID, "login-submit-btn")
+    WebDriverWait(context.driver, 10).until(EC.element_to_be_clickable((By.ID, "login-submit-btn")))
+    submit_button.click()
 
-@then('I should see a message')
+@then('I should see a message indicating fields are required')
 def step_impl(context):
-    error_message = WebDriverWait(context.driver, 10).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, ".errors"))
-    ).text
-    assert error_message == "El nombre es requerido"
-    take_screenshot(context, 'I_should_see_a_message')
-    context.driver.quit()
+    try:
+        # Intentional failure
+        assert False, "Failing this scenario intentionally"
+        error_messages = WebDriverWait(context.driver, 20).until(
+            EC.presence_of_all_elements_located((By.CSS_SELECTOR, ".errors"))
+        )
+        assert any("El usuario es requerido" in error.text for error in error_messages), "El usuario es requerido error message not found"
+        assert any("La contraseña es requerida" in error.text for error in error_messages), "La contraseña es requerida error message not found"
+        take_screenshot(context, 'I_should_see_a_message_indicating_fields_are_required')
+    except Exception as e:
+        take_screenshot(context, 'I_should_see_a_message_indicating_fields_are_required_fail')
+        raise e
+    finally:
+        context.driver.quit()
 
-@when('I enter a name with numbers')
+@when('I enter an invalid username')
 def step_impl(context):
-    context.driver.find_element(By.NAME, "nombre").send_keys("Mari1234")
-    context.driver.find_element(By.NAME, "apellido").send_keys("Anasco")
-    context.driver.find_element(By.NAME, "cedula_ciudadania").send_keys("1753951076")
-    context.driver.find_element(By.NAME, "domicilio").send_keys("Chillogallo")
-    context.driver.find_element(By.NAME, "telefono").send_keys("0995227606")
-    context.driver.find_element(By.NAME, "email").send_keys("sianasco@espe.edu.ec")
-    context.driver.find_element(By.NAME, "fecha_nacimiento").send_keys("07-04-2004")
-    context.driver.find_element(By.NAME, "user").send_keys("sianasco2")
-    context.driver.find_element(By.NAME, "password").send_keys("password456")
-    
-    context.driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
-    take_screenshot(context, 'I_enter_a_name_with_numbers')
+    context.driver.find_element(By.NAME, "nombreUsuario").send_keys("invalidUser")
+    context.driver.find_element(By.NAME, "password").send_keys("4321")
+    take_screenshot(context, 'I_enter_an_invalid_username')
+    submit_button = context.driver.find_element(By.ID, "login-submit-btn")
+    WebDriverWait(context.driver, 10).until(EC.element_to_be_clickable((By.ID, "login-submit-btn")))
+    submit_button.click()
 
-@then('I should see a alert message')
+@then('I should see a username error message')
 def step_impl(context):
-    error_message = WebDriverWait(context.driver, 10).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, ".errors"))
-    ).text
-    assert error_message == "Solo se permiten letras"
-    take_screenshot(context, 'I_should_see_a_alert_message')
-    context.driver.quit()
+    try:
+        # Intentional failure
+        assert False, "Failing this scenario intentionally"
+        error_message = WebDriverWait(context.driver, 20).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, ".butteruptoast.error .message"))
+        ).text
+        assert "Usuario o contraseña incorrectos." in error_message, "Usuario o contraseña incorrectos error message not found"
+        take_screenshot(context, 'I_should_see_a_username_error_message')
+    except Exception as e:
+        take_screenshot(context, 'I_should_see_a_username_error_message_fail')
+        raise e
+    finally:
+        context.driver.quit()
 
-@when('I enter a lastname with numbers')
+@when('I enter an invalid password')
 def step_impl(context):
-    context.driver.find_element(By.NAME, "nombre").send_keys("Maria")
-    context.driver.find_element(By.NAME, "apellido").send_keys("Lopez123")
-    context.driver.find_element(By.NAME, "cedula_ciudadania").send_keys("1753951076")
-    context.driver.find_element(By.NAME, "domicilio").send_keys("Chillogallo")
-    context.driver.find_element(By.NAME, "telefono").send_keys("0995227606")
-    context.driver.find_element(By.NAME, "email").send_keys("sianasco@espe.edu.ec")
-    context.driver.find_element(By.NAME, "fecha_nacimiento").send_keys("07-04-2004")
-    context.driver.find_element(By.NAME, "user").send_keys("sianasco3")
-    context.driver.find_element(By.NAME, "password").send_keys("password789")
-    
-    context.driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
-    take_screenshot(context, 'I_enter_a_lastname_with_numbers')
+    context.driver.find_element(By.NAME, "nombreUsuario").send_keys("MIGUEL")
+    context.driver.find_element(By.NAME, "password").send_keys("invalidPassword")
+    take_screenshot(context, 'I_enter_an_invalid_password')
+    submit_button = context.driver.find_element(By.ID, "login-submit-btn")
+    WebDriverWait(context.driver, 10).until(EC.element_to_be_clickable((By.ID, "login-submit-btn")))
+    submit_button.click()
 
-@then('I should see a lastname validation message')
+@then('I should see a password error message')
 def step_impl(context):
-    error_message = WebDriverWait(context.driver, 10).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, ".errors"))
-    ).text
-    assert error_message == "Solo se permiten letras"
-    take_screenshot(context, 'I_should_see_a_lastname_validation_message')
-    context.driver.quit()
+    try:
+        # Intentional failure
+        assert False, "Failing this scenario intentionally"
+        error_message = WebDriverWait(context.driver, 20).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, ".butteruptoast.error .message"))
+        ).text
+        assert "Usuario o contraseña incorrectos." in error_message, "Usuario o contraseña incorrectos error message not found"
+        take_screenshot(context, 'I_should_see_a_password_error_message')
+    except Exception as e:
+        take_screenshot(context, 'I_should_see_a_password_error_message_fail')
+        raise e
+    finally:
+        context.driver.quit()
 
-@when('I enter an excessively old birth date')
+@when('I enter invalid credentials')
 def step_impl(context):
-    context.driver.find_element(By.NAME, "nombre").send_keys("Maria")
-    context.driver.find_element(By.NAME, "apellido").send_keys("Lopez")
-    context.driver.find_element(By.NAME, "cedula_ciudadania").send_keys("1753951076")
-    context.driver.find_element(By.NAME, "domicilio").send_keys("Chillogallo")
-    context.driver.find_element(By.NAME, "telefono").send_keys("0995227606")
-    context.driver.find_element(By.NAME, "email").send_keys("sianasco@espe.edu.ec")
-    context.driver.find_element(By.NAME, "fecha_nacimiento").send_keys("07-04-1800")
-    context.driver.find_element(By.NAME, "user").send_keys("sianasco4")
-    context.driver.find_element(By.NAME, "password").send_keys("password321")
-    
-    context.driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
-    take_screenshot(context, 'I_enter_an_excessively_old_birth_date')
+    context.driver.find_element(By.NAME, "nombreUsuario").send_keys("invalidUser")
+    context.driver.find_element(By.NAME, "password").send_keys("invalidPassword")
+    take_screenshot(context, 'I_enter_invalid_credentials')
+    submit_button = context.driver.find_element(By.ID, "login-submit-btn")
+    WebDriverWait(context.driver, 10).until(EC.element_to_be_clickable((By.ID, "login-submit-btn")))
+    submit_button.click()
 
-@then('I should see an old birthdate validation message')
+@then('I should see an invalid credentials error message')
 def step_impl(context):
-    error_message = WebDriverWait(context.driver, 10).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, ".errors"))
-    ).text
-    assert error_message == "La fecha de nacimiento no puede ser anterior al año 1900"
-    take_screenshot(context, 'I_should_see_an_old_birthdate_validation_message')
-    context.driver.quit()
-
-@when('I enter the birth date of an underage person')
-def step_impl(context):
-    context.driver.find_element(By.NAME, "nombre").send_keys("Maria")
-    context.driver.find_element(By.NAME, "apellido").send_keys("Lopez")
-    context.driver.find_element(By.NAME, "cedula_ciudadania").send_keys("1753951076")
-    context.driver.find_element(By.NAME, "domicilio").send_keys("Chillogallo")
-    context.driver.find_element(By.NAME, "telefono").send_keys("0995227606")
-    context.driver.find_element(By.NAME, "email").send_keys("sianasco@espe.edu.ec")
-    context.driver.find_element(By.NAME, "fecha_nacimiento").send_keys("07-04-2012")
-    context.driver.find_element(By.NAME, "user").send_keys("sianasco5")
-    context.driver.find_element(By.NAME, "password").send_keys("password654")
-    
-    context.driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
-    take_screenshot(context, 'I_enter_the_birth_date_of_an_underage_person')
-
-@then('I should see an underage validation message')
-def step_impl(context):
-    error_message = WebDriverWait(context.driver, 10).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, ".errors"))
-    ).text
-    assert error_message == "Debe tener al menos 18 años"
-    take_screenshot(context, 'I_should_see_an_underage_validation_message')
-    context.driver.quit()
-
-@when('I enter a negative number in id field')
-def step_impl(context):
-    context.driver.find_element(By.NAME, "nombre").send_keys("Maria")
-    context.driver.find_element(By.NAME, "apellido").send.keys("Lopez")
-    context.driver.find_element(By.NAME, "cedula_ciudadania").send_keys("-1")
-    context.driver.find_element(By.NAME, "domicilio").send_keys("Chillogallo")
-    context.driver.find_element(By.NAME, "telefono").send_keys("0995227606")
-    context.driver.find_element(By.NAME, "email").send.keys("sianasco@espe.edu.ec")
-    context.driver.find_element(By.NAME, "fecha_nacimiento").send.keys("07-04-2004")
-    context.driver.find_element(By.NAME, "user").send.keys("sianasco6")
-    context.driver.find_element(By.NAME, "password").send.keys("password987")
-    
-    context.driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
-    take_screenshot(context, 'I_enter_a_negative_number_in_id_field')
-
-@then('I should see an id validation message')
-def step_impl(context):
-    error_message = WebDriverWait(context.driver, 10).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, ".errors"))
-    ).text
-    assert error_message == "El número de cédula es requerido"
-    take_screenshot(context, 'I_should_see_an_id_validation_message')
-    context.driver.quit()
+    try:
+        # Intentional failure
+        assert False, "Failing this scenario intentionally"
+        error_message = WebDriverWait(context.driver, 20).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, ".butteruptoast.error .message"))
+        ).text
+        assert "Usuario o contraseña incorrectos." in error_message, "Usuario o contraseña incorrectos error message not found"
+        take_screenshot(context, 'I_should_see_an_invalid_credentials_error_message')
+    except Exception as e:
+        take_screenshot(context, 'I_should_see_an_invalid_credentials_error_message_fail')
+        raise e
+    finally:
+        context.driver.quit()
